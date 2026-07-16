@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Client Login — ConstructONS Homes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+<div class="auth-wrap">
+  <div class="auth-side">
+    <div class="brand">
+      <div class="brand-mark">C</div>
+      <div class="brand-text">Construct<span>ONS</span></div>
+    </div>
+    <div>
+      <div class="eyebrow">Client Portal</div>
+      <h1 style="color:#fff; font-size:36px;">Your build,<br>always visible.</h1>
+      <p style="color:rgba(255,255,255,.6); max-width:360px;">Track progress, payments, and documents for your project — live, from anywhere.</p>
+    </div>
+    <p style="color:rgba(255,255,255,.4); font-size:12.5px;">© 2026 ConstructONS Homes</p>
+  </div>
+
+  <div class="auth-form-side">
+    <div class="auth-card">
+      <h2 id="form-title" style="font-size:26px; margin-bottom:6px;">Welcome back</h2>
+      <p style="margin-bottom:24px; font-size:14px;">Log in to view your project dashboard.</p>
+
+      <div id="config-warning" class="msg msg-info" style="display:none;">
+        Demo mode — backend not connected yet. See <span class="mono">config.js</span> to wire up real login. You can still explore the dashboard below.
+      </div>
+      <div id="auth-error" class="msg msg-error" style="display:none;"></div>
+
+      <form id="login-form">
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" required placeholder="you@example.com">
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" required placeholder="••••••••">
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" id="submit-btn">Log In</button>
+      </form>
+
+      <p style="text-align:center; margin-top:18px; font-size:13.5px;">
+        <span id="toggle-text">Don't have an account?</span>
+        <a href="#" id="toggle-mode" style="color:var(--orange); font-weight:600;">Sign up</a>
+      </p>
+      <p style="text-align:center; margin-top:8px;"><a href="index.html" style="font-size:13px; color:var(--ink-soft);">← Back to homepage</a></p>
+    </div>
+  </div>
+</div>
+
+<script src="config.js"></script>
+<script>
+let mode = 'login';
+const form = document.getElementById('login-form');
+const toggleLink = document.getElementById('toggle-mode');
+const toggleText = document.getElementById('toggle-text');
+const formTitle = document.getElementById('form-title');
+const submitBtn = document.getElementById('submit-btn');
+const errorBox = document.getElementById('auth-error');
+const configWarning = document.getElementById('config-warning');
+
+if (!SUPABASE_CONFIGURED) {
+  configWarning.style.display = 'block';
+}
+
+toggleLink.addEventListener('click', (e) => {
+  e.preventDefault();
+  mode = mode === 'login' ? 'signup' : 'login';
+  if (mode === 'signup') {
+    formTitle.textContent = 'Create your account';
+    submitBtn.textContent = 'Sign Up';
+    toggleText.textContent = 'Already have an account?';
+    toggleLink.textContent = 'Log in';
+  } else {
+    formTitle.textContent = 'Welcome back';
+    submitBtn.textContent = 'Log In';
+    toggleText.textContent = "Don't have an account?";
+    toggleLink.textContent = 'Sign up';
+  }
+});
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  errorBox.style.display = 'none';
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+
+  if (!SUPABASE_CONFIGURED) {
+    // Demo mode — skip straight to dashboard with mock data
+    window.location.href = 'dashboard.html?demo=1';
+    return;
+  }
+
+  submitBtn.textContent = 'Please wait…';
+  try {
+    let result;
+    if (mode === 'signup') {
+      result = await supabaseClient.auth.signUp({ email, password });
+    } else {
+      result = await supabaseClient.auth.signInWithPassword({ email, password });
+    }
+    if (result.error) throw result.error;
+    window.location.href = 'dashboard.html';
+  } catch (err) {
+    errorBox.textContent = err.message || 'Something went wrong. Please try again.';
+    errorBox.style.display = 'block';
+    submitBtn.textContent = mode === 'signup' ? 'Sign Up' : 'Log In';
+  }
+});
+</script>
+</body>
+</html>

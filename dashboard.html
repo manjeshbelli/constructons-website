@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard — ConstructONS Homes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+<div class="dash">
+  <aside class="dash-side">
+    <div class="brand">
+      <div class="brand-mark">C</div>
+      <div class="brand-text">Construct<span>ONS</span></div>
+    </div>
+    <nav class="dash-nav">
+      <a href="#" class="active">🏠 Home</a>
+      <a href="#">🏗️ My Project</a>
+      <a href="#">📄 Documents</a>
+      <a href="#">💳 Payments</a>
+      <a href="#">💬 Messages</a>
+      <a href="#" id="logout-link">🚪 Log Out</a>
+    </nav>
+    <div style="margin-top:auto; padding:14px; background:rgba(255,255,255,.06); border-radius:10px;">
+      <p style="color:rgba(255,255,255,.55); font-size:12px; margin:0;">Need help? <br><a href="mailto:hello@constructonshomes.com" style="color:var(--orange);">Contact your PM</a></p>
+    </div>
+  </aside>
+
+  <main class="dash-main">
+    <div class="dash-topbar">
+      <div>
+        <h1 id="welcome-title">Welcome back</h1>
+        <p id="project-sub" style="margin:0;" class="mono">Loading project…</p>
+      </div>
+      <a href="index.html" class="btn btn-outline-dark btn-sm">← Homepage</a>
+    </div>
+
+    <div id="demo-banner" class="msg msg-info" style="display:none;">Demo mode — showing sample project data. Connect Supabase in <span class="mono">config.js</span> to show real client data.</div>
+
+    <div class="stat-row">
+      <div class="stat-card"><div class="lbl">Overall Progress</div><div class="val" id="stat-progress">—</div></div>
+      <div class="stat-card"><div class="lbl">Current Stage</div><div class="val" id="stat-stage" style="font-size:16px;">—</div></div>
+      <div class="stat-card"><div class="lbl">Amount Paid</div><div class="val" id="stat-paid">—</div></div>
+      <div class="stat-card"><div class="lbl">Next Milestone Due</div><div class="val" id="stat-next" style="font-size:15px;">—</div></div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3 style="font-size:16px; margin-bottom:16px;">Project Lifecycle — Milestone Tracker</h3>
+        <div id="milestone-list"></div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:20px;">
+        <div class="card">
+          <h3 style="font-size:16px; margin-bottom:12px;">Documents</h3>
+          <div id="doc-list"></div>
+        </div>
+        <div class="card">
+          <h3 style="font-size:16px; margin-bottom:12px;">Payment Schedule</h3>
+          <div id="payment-list"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<div class="modal-overlay" id="modal-overlay">
+  <div class="modal-panel">
+    <div class="modal-head">
+      <div>
+        <h3 id="modal-title">Stage name</h3>
+      </div>
+      <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+    </div>
+    <p class="modal-sub" id="modal-sub">Status</p>
+    <div id="modal-subtasks"></div>
+  </div>
+</div>
+
+<script src="config.js"></script>
+<script>
+const MOCK_PROJECT = {
+  client_name: "Rahul",
+  project_name: "Green Villa",
+  site_ref: "Site A-12",
+  package: "Premium™",
+  built_up_area: 1500,
+  contract_value: 3297000,
+  amount_paid: 1384740,
+  current_stage: "Construction™ — Stage 06",
+  progress_pct: 42,
+};
+const MOCK_MILESTONES = [
+  { name: "Advisory™", status: "done", date: "Completed 12 Jan 2026" },
+  { name: "Design™", status: "done", date: "Completed 28 Jan 2026" },
+  { name: "Vastu™", status: "done", date: "Completed 02 Feb 2026" },
+  { name: "Budget™", status: "done", date: "Completed 10 Feb 2026" },
+  { name: "Approvals™", status: "done", date: "Completed 05 Mar 2026" },
+  { name: "Construction™", status: "active", date: "In progress — 68% of stage complete" },
+  { name: "Interiors™", status: "pending", date: "Not started" },
+  { name: "Furniture™", status: "pending", date: "Not started" },
+  { name: "Smart Home™", status: "pending", date: "Not started" },
+  { name: "Handover™", status: "pending", date: "Not started" },
+  { name: "Maintenance™", status: "pending", date: "Not started" },
+  { name: "Upgrade & Renovation™", status: "pending", date: "Not started" },
+];
+const MOCK_DOCS = [
+  { name: "Approved Building Plan.pdf", date: "05 Mar 2026" },
+  { name: "Construction Agreement.pdf", date: "12 Mar 2026" },
+  { name: "Material Specification Sheet.pdf", date: "12 Mar 2026" },
+  { name: "Site Progress Photos — June.zip", date: "30 Jun 2026" },
+];
+const MOCK_PAYMENTS = [
+  { name: "Booking Advance", pct: "10%", status: "done" },
+  { name: "Design & Approvals", pct: "10%", status: "done" },
+  { name: "Foundation Complete", pct: "15%", status: "done" },
+  { name: "Structure (RCC)", pct: "25%", status: "active" },
+  { name: "Brickwork & Plastering", pct: "15%", status: "pending" },
+];
+
+function fmtINR(n){ return "₹" + Number(n).toLocaleString('en-IN'); }
+
+const STAGE_DETAILS = {
+  "Advisory™": ["Feasibility Study", "Project Consultation", "Land Evaluation", "Roadmap & Strategy"],
+  "Design™": ["Architectural Design", "Structural Design", "Interior Concepts", "3D Visualization"],
+  "Vastu™": ["Site Analysis", "Plan Review", "Room Positioning", "Energy Alignment"],
+  "Budget™": ["Cost Estimation", "BOQ & Quantity Takeoff", "Budget Tracking", "Payment Planning"],
+  "Approvals™": ["Building Approvals", "Statutory Compliance", "Documentation", "Approval Tracking"],
+  "Construction™": ["Construction Execution", "Material Management", "Labour Management", "Stage Completion"],
+  "Interiors™": ["Interior Design", "Material & Finish Selection", "Execution", "Final Styling"],
+  "Furniture™": ["Furniture Selection", "Procurement", "Delivery", "Installation"],
+  "Smart Home™": ["Device Selection", "Wiring & Installation", "System Configuration", "Testing & Handover"],
+  "Handover™": ["Final Inspection", "Snag Closure", "Warranty Handover", "Project Completion"],
+  "Maintenance™": ["Scheduled Checkups", "Repairs & Servicing", "Emergency Support", "Annual Review"],
+  "Upgrade & Renovation™": ["Consultation", "Design Update", "Execution", "Final Handover"],
+};
+
+function openMilestoneModal(m){
+  document.getElementById('modal-title').textContent = m.name;
+  document.getElementById('modal-sub').textContent = m.date;
+  const subtasks = STAGE_DETAILS[m.name] || [];
+  const box = document.getElementById('modal-subtasks');
+  box.innerHTML = subtasks.map((task, i) => {
+    let iconClass, icon;
+    if (m.status === 'done') { iconClass = 'm-done'; icon = '✓'; }
+    else if (m.status === 'active') { iconClass = i === 0 ? 'm-done' : (i === 1 ? 'm-active' : 'm-pending'); icon = i === 0 ? '✓' : (i === 1 ? '●' : '○'); }
+    else { iconClass = 'm-pending'; icon = '○'; }
+    return `<div class="subtask"><div class="st-icon ${iconClass}">${icon}</div><div class="st-name">${task}</div></div>`;
+  }).join('');
+  document.getElementById('modal-overlay').classList.add('open');
+}
+function closeMilestoneModal(){
+  document.getElementById('modal-overlay').classList.remove('open');
+}
+document.getElementById('modal-close').addEventListener('click', closeMilestoneModal);
+document.getElementById('modal-overlay').addEventListener('click', (e) => {
+  if (e.target.id === 'modal-overlay') closeMilestoneModal();
+});
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMilestoneModal(); });
+
+function renderMilestones(list){
+  const el = document.getElementById('milestone-list');
+  el.innerHTML = list.map((m, i) => `
+    <div class="milestone" tabindex="0" role="button" data-idx="${i}">
+      <div class="m-dot ${m.status === 'done' ? 'm-done' : m.status === 'active' ? 'm-active' : 'm-pending'}">
+        ${m.status === 'done' ? '✓' : m.status === 'active' ? '●' : '○'}
+      </div>
+      <div style="flex:1;">
+        <div class="m-title">${m.name}</div>
+        <div class="m-sub mono">${m.date}</div>
+      </div>
+      <span class="badge ${m.status === 'done' ? 'badge-done' : m.status === 'active' ? 'badge-active' : 'badge-pending'}">${m.status.toUpperCase()}</span>
+    </div>`).join('');
+  el.querySelectorAll('.milestone').forEach(row => {
+    const idx = Number(row.dataset.idx);
+    row.addEventListener('click', () => openMilestoneModal(list[idx]));
+    row.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openMilestoneModal(list[idx]); } });
+  });
+}
+function renderDocs(list){
+  const el = document.getElementById('doc-list');
+  el.innerHTML = list.map(d => `
+    <div class="doc-row"><span>📄 ${d.name}</span><span class="mono" style="color:var(--ink-soft); font-size:11px;">${d.date}</span></div>`).join('');
+}
+function renderPayments(list){
+  const el = document.getElementById('payment-list');
+  el.innerHTML = list.map(p => `
+    <div class="doc-row">
+      <span>${p.name} <span class="mono" style="color:var(--ink-soft);">(${p.pct})</span></span>
+      <span class="badge ${p.status === 'done' ? 'badge-done' : p.status === 'active' ? 'badge-active' : 'badge-pending'}">${p.status.toUpperCase()}</span>
+    </div>`).join('');
+}
+function renderProject(p){
+  document.getElementById('welcome-title').textContent = `Welcome back, ${p.client_name}`;
+  document.getElementById('project-sub').textContent = `${p.project_name} · ${p.site_ref} · ${p.package}`;
+  document.getElementById('stat-progress').textContent = p.progress_pct + '%';
+  document.getElementById('stat-stage').textContent = p.current_stage;
+  document.getElementById('stat-paid').textContent = fmtINR(p.amount_paid);
+  document.getElementById('stat-next').textContent = 'Structure (RCC) — 25%';
+}
+
+async function loadDashboard(){
+  const urlParams = new URLSearchParams(window.location.search);
+  const isDemo = urlParams.get('demo') === '1' || !SUPABASE_CONFIGURED;
+
+  if (isDemo) {
+    document.getElementById('demo-banner').style.display = 'block';
+    renderProject(MOCK_PROJECT);
+    renderMilestones(MOCK_MILESTONES);
+    renderDocs(MOCK_DOCS);
+    renderPayments(MOCK_PAYMENTS);
+    return;
+  }
+
+  // Real Supabase data path
+  const { data: { session } } = await supabaseClient.auth.getSession();
+  if (!session) { window.location.href = 'login.html'; return; }
+
+  const userId = session.user.id;
+  const { data: project } = await supabaseClient
+    .from('projects').select('*').eq('client_id', userId).single();
+
+  if (!project) {
+    // no project row yet for this client — fall back to demo view
+    document.getElementById('demo-banner').style.display = 'block';
+    renderProject(MOCK_PROJECT);
+    renderMilestones(MOCK_MILESTONES);
+    renderDocs(MOCK_DOCS);
+    renderPayments(MOCK_PAYMENTS);
+    return;
+  }
+
+  renderProject(project);
+  const { data: milestones } = await supabaseClient
+    .from('milestones').select('*').eq('project_id', project.id).order('stage_order');
+  const { data: docs } = await supabaseClient
+    .from('documents').select('*').eq('project_id', project.id).order('uploaded_at', { ascending: false });
+  const { data: payments } = await supabaseClient
+    .from('payments').select('*').eq('project_id', project.id).order('id');
+
+  renderMilestones(milestones && milestones.length ? milestones : MOCK_MILESTONES);
+  renderDocs(docs && docs.length ? docs : MOCK_DOCS);
+  renderPayments(payments && payments.length ? payments : MOCK_PAYMENTS);
+}
+
+document.getElementById('logout-link').addEventListener('click', async (e) => {
+  e.preventDefault();
+  if (SUPABASE_CONFIGURED) await supabaseClient.auth.signOut();
+  window.location.href = 'login.html';
+});
+
+loadDashboard();
+</script>
+</body>
+</html>

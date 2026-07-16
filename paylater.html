@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PayLater™ Program — ConstructONS Homes</title>
+<meta name="description" content="Build Today. Pay Later. Start your home construction now and pay as you progress — simple, transparent, hassle-free.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <div class="brand">
+      <div class="brand-mark">C</div>
+      <div class="brand-text">Construct<span>ONS</span></div>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="#journey">The Journey</a>
+      <a href="#benefits">Benefits</a>
+      <a href="#eligibility">Eligibility</a>
+    </div>
+    <div class="nav-cta">
+      <a href="login.html" class="btn btn-outline btn-sm">Client Login</a>
+      <a href="#eligibility" class="btn btn-primary btn-sm">Check Eligibility</a>
+    </div>
+  </div>
+</nav>
+
+<header class="pl-hero">
+  <div class="wrap">
+    <div class="pl-hero-grid">
+      <div>
+        <div class="eyebrow">PayLater™ Program</div>
+        <h1>Build Today.<br><span class="accent">Pay Later.</span></h1>
+        <p class="lead">Start your home construction now and pay as you progress. Simple. Transparent. Hassle-free.</p>
+        <div class="pl-badges">
+          <div class="pl-badge">💳 <span><b>No Heavy Upfront</b>Payment</span></div>
+          <div class="pl-badge">🔄 <span><b>Pay as You</b>Progress</span></div>
+          <div class="pl-badge">🚩 <span><b>Milestone Based</b>Payments</span></div>
+          <div class="pl-badge">🛡️ <span><b>Secure &amp;</b>Transparent</span></div>
+        </div>
+        <div class="hero-cta">
+          <a href="#eligibility" class="btn btn-primary">Check Your Eligibility</a>
+          <a href="#journey" class="btn btn-outline">See How It Works</a>
+        </div>
+        <p class="pl-fineprint">*Subject to eligibility and terms.</p>
+      </div>
+
+      <div class="member-card">
+        <div class="member-card-top">
+          <div class="member-card-brand">
+            <div class="brand-mark">C</div>
+            <div style="font-size:12px;">Construct<span style="color:var(--orange);">ONS</span><br><span style="font-size:9px; color:rgba(255,255,255,.5);">PayLater™ MEMBER</span></div>
+          </div>
+          <div class="member-card-tier">Premium</div>
+        </div>
+        <div class="chip"></div>
+        <div class="member-card-number">7867 5678 2364 5978</div>
+        <div class="member-card-bottom">
+          <div>
+            <div style="font-size:9px; color:rgba(255,255,255,.4);">VALID THRU</div>
+            <div class="member-card-name">12/28</div>
+          </div>
+          <div class="member-card-tag">PayLater<span>™</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pl-stats">
+    <div class="wrap">
+      <div class="pl-stat"><div class="num">1000+</div><div class="lbl">Happy Families</div></div>
+      <div class="pl-stat"><div class="num">25+</div><div class="lbl">Cities</div></div>
+      <div class="pl-stat"><div class="num">₹500Cr+</div><div class="lbl">Worth Projects</div></div>
+      <div class="pl-stat"><div class="num">98%</div><div class="lbl">On-time Delivery</div></div>
+      <div class="pl-stat"><div class="num">4.8/5</div><div class="lbl">Customer Rating</div></div>
+    </div>
+  </div>
+</header>
+
+<section id="journey">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">The PayLater™ Journey</div>
+      <h2>Complete one stage to unlock the next.</h2>
+      <p>Build with confidence, pay with flexibility — track exactly where your project (and your payments) stand.</p>
+    </div>
+    <div class="pl-journey-grid">
+      <div class="pl-stage unlocked"><div class="pl-stage-num">1</div><h4>Advisory</h4><p>Expert guidance before you begin</p><div class="pl-stage-status">✓ UNLOCKED</div></div>
+      <div class="pl-stage unlocked"><div class="pl-stage-num">2</div><h4>Design</h4><p>Approve your design</p><div class="pl-stage-status">✓ UNLOCKED</div></div>
+      <div class="pl-stage unlocked"><div class="pl-stage-num">3</div><h4>Vastu</h4><p>Balanced spaces, better living</p><div class="pl-stage-status">✓ UNLOCKED</div></div>
+      <div class="pl-stage unlocked"><div class="pl-stage-num">4</div><h4>Budget</h4><p>Transparent budget estimate</p><div class="pl-stage-status">✓ UNLOCKED</div></div>
+      <div class="pl-stage unlocked"><div class="pl-stage-num">5</div><h4>Approvals</h4><p>Documentation & approvals</p><div class="pl-stage-status">✓ UNLOCKED</div></div>
+      <div class="pl-stage active"><div class="pl-stage-num">6</div><h4>Construction</h4><p>We build with quality</p><div class="pl-stage-status">⧗ IN PROGRESS</div></div>
+      <div class="pl-stage locked"><div class="pl-stage-num">7</div><h4>Interiors</h4><p>Design your interiors</p><div class="pl-stage-status">🔒 LOCKED</div></div>
+      <div class="pl-stage locked"><div class="pl-stage-num">8</div><h4>Furniture</h4><p>Furnish your home</p><div class="pl-stage-status">🔒 LOCKED</div></div>
+      <div class="pl-stage locked"><div class="pl-stage-num">9</div><h4>Smart Home</h4><p>Upgrade to smart living</p><div class="pl-stage-status">🔒 LOCKED</div></div>
+      <div class="pl-stage locked"><div class="pl-stage-num">10</div><h4>Handover</h4><p>Hand over with happiness</p><div class="pl-stage-status">🔒 LOCKED</div></div>
+      <div class="pl-stage locked"><div class="pl-stage-num">11</div><h4>Maintenance</h4><p>We maintain your home</p><div class="pl-stage-status">🔒 LOCKED</div></div>
+      <div class="pl-stage locked"><div class="pl-stage-num">12</div><h4>Upgrade & Renovation</h4><p>Upgrade or renovate, anytime</p><div class="pl-stage-status">🔒 LOCKED</div></div>
+    </div>
+    <p style="text-align:center; margin-top:24px; font-family:'Space Grotesk',sans-serif; font-weight:700; color:var(--orange); font-size:13px; letter-spacing:.04em;">THE PAYLATER™ LOOP — One Journey. Many Benefits. Lifelong Relationship.</p>
+  </div>
+</section>
+
+<section style="background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="eyebrow" style="justify-content:center">Your Dashboard</div>
+      <h2>Track every stage, every rupee.</h2>
+    </div>
+    <div style="display:flex; justify-content:center;">
+      <div class="pl-dash-preview">
+        <div class="pl-dash-hi">Hi, Arjun 👋</div>
+        <div class="pl-dash-sub">Welcome back to ConstructONS</div>
+        <div class="pl-ring-row">
+          <div>
+            <div class="pl-ring-lbl">PayLater™ Progress</div>
+            <div class="pl-ring-val">5 / 12 <span style="font-size:12px; color:rgba(255,255,255,.5);">Stages Completed</span></div>
+          </div>
+          <div class="pl-ring-pct">42%</div>
+        </div>
+        <div class="pl-current-stage">
+          <div class="lbl">Current Stage</div>
+          <div class="name">Construction — We are building your dream home</div>
+        </div>
+        <div style="font-size:11px; color:rgba(255,255,255,.45); margin-bottom:6px; text-transform:uppercase;">PayLater™ Benefits Unlocked</div>
+        <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:8px;">
+          <div style="background:rgba(255,255,255,.05); border-radius:8px; padding:10px 6px; text-align:center; font-size:10px; color:rgba(255,255,255,.7);">Zero Upfront</div>
+          <div style="background:rgba(255,255,255,.05); border-radius:8px; padding:10px 6px; text-align:center; font-size:10px; color:rgba(255,255,255,.7);">Pay as You Progress</div>
+          <div style="background:rgba(255,255,255,.05); border-radius:8px; padding:10px 6px; text-align:center; font-size:10px; color:rgba(255,255,255,.7);">Flexible Milestones</div>
+          <div style="background:rgba(255,255,255,.05); border-radius:8px; padding:10px 6px; text-align:center; font-size:10px; color:rgba(255,255,255,.7);">100% Transparent</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="benefits">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="eyebrow" style="justify-content:center">Why Choose ConstructONS PayLater™</div>
+      <h2>Build smarter, not harder.</h2>
+    </div>
+    <div class="pl-benefit-grid">
+      <div class="pl-benefit"><div class="pl-benefit-icon">🏗️</div><h4>Build Early</h4><p>Start construction early without waiting to save the entire amount.</p></div>
+      <div class="pl-benefit"><div class="pl-benefit-icon">💰</div><h4>Pay Smart</h4><p>Pay only for the work completed. Money in, progress out.</p></div>
+      <div class="pl-benefit"><div class="pl-benefit-icon">📋</div><h4>Stay in Control</h4><p>Track every stage, approve every milestone.</p></div>
+      <div class="pl-benefit"><div class="pl-benefit-icon">🔍</div><h4>No Hidden Cost</h4><p>Transparent pricing. No surprises at any stage.</p></div>
+      <div class="pl-benefit"><div class="pl-benefit-icon">🤝</div><h4>Lifelong Support</h4><p>From building to maintenance, we are with you always.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--bg-light);">
+  <div class="wrap">
+    <div class="grid-2" style="grid-template-columns:1fr 1fr 1fr; gap:24px;">
+      <div>
+        <h3 style="font-size:18px; margin-bottom:16px;">How It Works</h3>
+        <div style="display:flex; flex-direction:column; gap:16px;">
+          <div class="pl-step"><div class="n">1</div><h4>Enroll & Check Eligibility</h4><p>Simple KYC and eligibility check.</p></div>
+          <div class="pl-step"><div class="n">2</div><h4>Choose Your Plan</h4><p>Select the PayLater™ program that suits you.</p></div>
+          <div class="pl-step"><div class="n">3</div><h4>Start Your Project</h4><p>We start your project and you track live progress.</p></div>
+          <div class="pl-step"><div class="n">4</div><h4>Pay as You Progress</h4><p>Pay at each milestone — only for completed work.</p></div>
+        </div>
+      </div>
+
+      <div id="eligibility">
+        <h3 style="font-size:18px; margin-bottom:16px;">Eligibility Criteria</h3>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <div class="pl-elig-item"><div class="pl-elig-check">✓</div>Valid ID Proof & Address Proof</div>
+          <div class="pl-elig-item"><div class="pl-elig-check">✓</div>Clear Ownership / Agreement</div>
+          <div class="pl-elig-item"><div class="pl-elig-check">✓</div>Minimum Project Value Applicable</div>
+          <div class="pl-elig-item"><div class="pl-elig-check">✓</div>Good Payment History (If Existing)</div>
+        </div>
+        <a href="#contact-form" class="btn btn-primary btn-block" style="margin-top:20px;">Check Eligibility</a>
+      </div>
+
+      <div>
+        <h3 style="font-size:18px; margin-bottom:16px;">Build Today. Live Tomorrow.</h3>
+        <p style="font-size:13.5px;">Thousands of families are building their dream homes with ConstructONS PayLater™.</p>
+        <div style="background:var(--bg-dark); border-radius:12px; padding:20px; text-align:center; margin-top:12px;">
+          <div style="font-family:'JetBrains Mono',monospace; font-size:26px; color:var(--orange); font-weight:700;">1000+</div>
+          <div style="font-size:11px; color:rgba(255,255,255,.6); text-transform:uppercase;">Happy Families</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact-form" style="background:var(--bg-dark); color:#fff;">
+  <div class="wrap" style="max-width:600px; text-align:center;">
+    <div class="eyebrow" style="justify-content:center">Ready to Build Your Dream Home?</div>
+    <h2 style="color:#fff;">Check your PayLater™ eligibility.</h2>
+    <p style="color:rgba(255,255,255,.6); margin-bottom:28px;">Takes less than 2 minutes. No commitment required.</p>
+    <form id="pl-form" style="text-align:left; display:grid; gap:14px;">
+      <div class="field"><label style="color:#fff;">Full Name</label><input type="text" required placeholder="Your name"></div>
+      <div class="field"><label style="color:#fff;">Phone Number</label><input type="tel" required placeholder="+91 XXXXX XXXXX"></div>
+      <div class="field"><label style="color:#fff;">City</label><input type="text" required placeholder="e.g. Coimbatore"></div>
+      <div class="field"><label style="color:#fff;">Estimated Project Value (₹)</label><input type="number" placeholder="e.g. 3500000"></div>
+      <button type="submit" class="btn btn-primary btn-block">Check My Eligibility</button>
+      <p id="pl-msg" style="text-align:center; font-size:13px;"></p>
+      <p class="pl-fineprint" style="text-align:center;">*Subject to eligibility and terms. This is not a loan approval — our team will contact you with next steps.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="brand" style="margin-bottom:14px;">
+        <div class="brand-mark">C</div>
+        <div class="brand-text">Construct<span>ONS</span></div>
+      </div>
+      <p style="max-width:280px; font-size:13px;">Build Today. Pay Later.™ — a ConstructONS Homes program.</p>
+    </div>
+    <div style="display:flex; gap:60px;">
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <strong style="color:#fff; font-size:13px;">Company</strong>
+        <a href="index.html">Homepage</a><a href="index.html#packages">Packages</a>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <strong style="color:#fff; font-size:13px;">Contact</strong>
+        <a href="mailto:hello@constructonshomes.com">hello@constructonshomes.com</a>
+        <a href="tel:+911234567890">+91 12345 67890</a>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <strong style="color:#fff; font-size:13px;">Client Access</strong>
+        <a href="login.html">Client Login</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© 2026 ConstructONS Homes. All rights reserved.</span>
+    <span>PayLater™ is a ConstructONS Homes program, subject to eligibility and terms.</span>
+  </div>
+</footer>
+
+<script src="config.js"></script>
+<script>
+document.getElementById('pl-form').addEventListener('submit', async function(e){
+  e.preventDefault();
+  const inputs = this.querySelectorAll('input');
+  const [name, phone, city, value] = inputs;
+  const msg = document.getElementById('pl-msg');
+
+  if (SUPABASE_CONFIGURED) {
+    const { error } = await supabaseClient.from('leads').insert({
+      full_name: name.value, phone: phone.value, city: city.value,
+      notes: 'PayLater™ eligibility check' + (value.value ? ` — Est. project value ₹${Number(value.value).toLocaleString('en-IN')}` : '')
+    });
+    if (error) {
+      msg.textContent = "Something went wrong — please call us directly.";
+      msg.style.color = '#FF8A80';
+      return;
+    }
+  }
+  msg.textContent = "Thanks — our PayLater™ team will call you within 24 hours.";
+  msg.style.color = '#7FD99A';
+  this.reset();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ConstructONS Homes — India's 1st Construction Operating System</title>
+<meta name="description" content="ConstructONS Homes manages your entire construction journey — from first idea to final handover — with transparency, technology, and trust at every step.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap">
+    <div class="brand">
+      <div class="brand-mark">C</div>
+      <div class="brand-text">Construct<span>ONS</span></div>
+    </div>
+    <div class="nav-links">
+      <a href="#lifecycle">Lifecycle</a>
+      <a href="#packages">Packages</a>
+      <a href="#budget-studio">Budget Studio™</a>
+      <a href="paylater.html" style="color:var(--orange);">PayLater™</a>
+      <a href="#ecosystem">Ecosystem</a>
+      <a href="#why">Why Us</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-cta">
+      <a href="login.html" class="btn btn-outline btn-sm">Client Login</a>
+      <a href="#contact" class="btn btn-primary btn-sm">Get a Quote</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">India's 1st Construction Operating System</div>
+      <h1>Everything construction.<br><span class="accent">Always on.</span></h1>
+      <p class="lead">One platform that manages your entire home-building journey — from first idea to final handover — with live visibility, expert execution, and zero hidden costs.</p>
+      <a href="paylater.html" class="pl-hero-pill">🎉 New: <strong>PayLater™</strong> — Build Today. Pay Later. <span class="arrow">→</span></a>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-primary">Start Your Build</a>
+        <a href="#lifecycle" class="btn btn-outline">See How It Works</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="num">10+</div><div class="lbl">Powerful Modules</div></div>
+        <div class="hero-stat"><div class="num">500+</div><div class="lbl">Expert Professionals</div></div>
+        <div class="hero-stat"><div class="num">100%</div><div class="lbl">Project Visibility</div></div>
+      </div>
+    </div>
+
+    <div class="hero-stack">
+    <div class="os-panel">
+      <div class="os-titlebar">
+        <div class="os-dots"><span></span><span></span><span></span></div>
+        <div class="os-status"><span class="dot"></span>SYSTEM ONLINE</div>
+      </div>
+      <div class="os-row">
+        <div class="os-proj">
+          <div class="name">Green Villa · Site A-12</div>
+          <div class="stage">STAGE_06 :: CONSTRUCTION™</div>
+        </div>
+        <div class="os-progress">
+          <div class="os-bar"><i style="width:68%"></i></div>
+          <div class="os-pct">68% COMPLETE</div>
+        </div>
+      </div>
+      <div class="os-row">
+        <div class="os-proj">
+          <div class="name">Sunrise Residency · Site B-04</div>
+          <div class="stage">STAGE_05 :: APPROVALS™</div>
+        </div>
+        <div class="os-progress">
+          <div class="os-bar"><i style="width:41%"></i></div>
+          <div class="os-pct">41% COMPLETE</div>
+        </div>
+      </div>
+      <div class="os-row">
+        <div class="os-proj">
+          <div class="name">Palm Heights · Site C-19</div>
+          <div class="stage">STAGE_10 :: HANDOVER™</div>
+        </div>
+        <div class="os-progress">
+          <div class="os-bar"><i style="width:96%"></i></div>
+          <div class="os-pct">96% COMPLETE</div>
+        </div>
+      </div>
+      <div class="os-row">
+        <div class="os-proj">
+          <div class="name">Today's payments processed</div>
+          <div class="stage">3 MILESTONES CLEARED</div>
+        </div>
+        <div class="os-pct" style="width:auto">₹18.4L</div>
+      </div>
+    </div>
+
+    <a href="paylater.html" class="hero-card-peek">
+      <div class="member-card">
+        <div class="member-card-top">
+          <div class="member-card-brand">
+            <div class="brand-mark">C</div>
+            <div style="font-size:12px;">Construct<span style="color:var(--orange);">ONS</span><br><span style="font-size:9px; color:rgba(255,255,255,.5);">PayLater™ MEMBER</span></div>
+          </div>
+          <div class="member-card-tier">Premium</div>
+        </div>
+        <div class="chip"></div>
+        <div class="member-card-number">7867 5678 2364 5978</div>
+        <div class="member-card-bottom">
+          <div>
+            <div style="font-size:9px; color:rgba(255,255,255,.4);">VALID THRU</div>
+            <div class="member-card-name">12/28</div>
+          </div>
+          <div class="member-card-tag">PayLater<span>™</span></div>
+        </div>
+      </div>
+    </a>
+    </div>
+  </div>
+</header>
+
+
+<div class="strip">
+  <div class="wrap">
+    <div class="strip-item"><div class="t">One Platform</div><div class="d">All construction needs, one place.</div></div>
+    <div class="strip-item"><div class="t">Transparent</div><div class="d">Real-time updates, clear visibility.</div></div>
+    <div class="strip-item"><div class="t">Tech-Powered</div><div class="d">Smart tools for better planning.</div></div>
+    <div class="strip-item"><div class="t">Expert Driven</div><div class="d">Experienced professionals, every step.</div></div>
+    <div class="strip-item"><div class="t">Secure & Trusted</div><div class="d">Your data, your project, protected.</div></div>
+    <div class="strip-item"><div class="t">On Time, On Budget</div><div class="d">Better control, fewer surprises.</div></div>
+  </div>
+</div>
+
+<section id="lifecycle">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="eyebrow" style="justify-content:center">The ConstructONS Lifecycle</div>
+      <h2>A complete end-to-end journey, managed for you.</h2>
+      <p>Ten stages. One accountable team. Zero guesswork.</p>
+    </div>
+    <div class="pipeline">
+      <div class="pipe-card" data-stage="Advisory™" tabindex="0" role="button"><div class="pipe-num">01</div><h4>Advisory™</h4><p>Feasibility study, land evaluation, roadmap & strategy.</p></div>
+      <div class="pipe-card" data-stage="Design™" tabindex="0" role="button"><div class="pipe-num">02</div><h4>Design™</h4><p>Architectural design, structural design, 3D visualization.</p></div>
+      <div class="pipe-card" data-stage="Vastu™" tabindex="0" role="button"><div class="pipe-num">03</div><h4>Vastu™</h4><p>Site analysis, plan review, energy alignment.</p></div>
+      <div class="pipe-card" data-stage="Budget™" tabindex="0" role="button"><div class="pipe-num">04</div><h4>Budget™</h4><p>Cost estimation, BOQ & quantity takeoff, payment planning.</p></div>
+      <div class="pipe-card" data-stage="Approvals™" tabindex="0" role="button"><div class="pipe-num">05</div><h4>Approvals™</h4><p>Building approvals, statutory compliance, documentation.</p></div>
+      <div class="pipe-card" data-stage="Construction™" tabindex="0" role="button"><div class="pipe-num">06</div><h4>Construction™</h4><p>Construction execution, material & labour management.</p></div>
+      <div class="pipe-card" data-stage="Interiors™" tabindex="0" role="button"><div class="pipe-num">07</div><h4>Interiors™</h4><p>Complete interior solutions tailored to style & budget.</p></div>
+      <div class="pipe-card" data-stage="Furniture™" tabindex="0" role="button"><div class="pipe-num">08</div><h4>Furniture™</h4><p>Ready-to-install furniture packages for every room.</p></div>
+      <div class="pipe-card" data-stage="Smart Home™" tabindex="0" role="button"><div class="pipe-num">09</div><h4>Smart Home™</h4><p>Smart home technology for safety, comfort & convenience.</p></div>
+      <div class="pipe-card" data-stage="Handover™" tabindex="0" role="button"><div class="pipe-num">10</div><h4>Handover™</h4><p>Final inspection, snag closure, warranty handover.</p></div>
+      <div class="pipe-card" data-stage="Maintenance™" tabindex="0" role="button"><div class="pipe-num">11</div><h4>Maintenance™</h4><p>After-sales support, annual maintenance & emergency help.</p></div>
+      <div class="pipe-card" data-stage="Upgrade & Renovation™" tabindex="0" role="button"><div class="pipe-num">12</div><h4>Upgrade & Renovation™</h4><p>Upgrade or renovate anytime, with the latest materials.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="packages" style="background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="eyebrow" style="justify-content:center">Budget Packages</div>
+      <h2>Build your home, your way.</h2>
+      <p>Four tiers, one promise: no hidden costs, only trust.</p>
+    </div>
+    <div class="pkg-grid">
+      <div class="pkg-card">
+        <div class="pkg-head pkg-basic"><div class="tier">Basic™</div><div class="rate">₹1,499<small> /sqft</small></div></div>
+        <div class="pkg-body">
+          <p style="color:var(--ink); font-weight:600; font-size:13px;">Build Your First Home.</p>
+          <li>Functional architectural design</li><li>Standard structural specs</li>
+          <li>Standard electrical & plumbing</li><li>Basic exterior finish</li>
+          <div class="tag-row"><span class="tag">1 BHK</span><span class="tag">2 BHK</span><span class="tag">Compact Homes</span></div>
+        </div>
+        <div class="pkg-foot"><a href="#contact" class="btn btn-outline-dark btn-block btn-sm">Choose Basic</a></div>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-head pkg-essential"><div class="tier">Essential™</div><div class="rate">₹1,799<small> /sqft</small></div></div>
+        <div class="pkg-body">
+          <p style="color:var(--ink); font-weight:600; font-size:13px;">Everything You Need.</p>
+          <li>Better flooring & paint finish</li><li>Modular kitchen provision</li>
+          <li>Improved electrical fittings</li><li>Enhanced exterior elevation</li>
+          <div class="tag-row"><span class="tag">2 BHK</span><span class="tag">3 BHK</span><span class="tag">Family Homes</span></div>
+        </div>
+        <div class="pkg-foot"><a href="#contact" class="btn btn-outline-dark btn-block btn-sm">Choose Essential</a></div>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-head pkg-premium"><div class="tier">Premium™</div><div class="rate">₹2,199<small> /sqft</small></div></div>
+        <div class="pkg-body">
+          <p style="color:var(--ink); font-weight:600; font-size:13px;">Designed for Modern Living.</p>
+          <li>Designer elevation & lighting</li><li>Modular kitchen included</li>
+          <li>Smart home readiness</li><li>Premium staircase finishes</li>
+          <div class="tag-row"><span class="tag">3 BHK</span><span class="tag">4 BHK</span><span class="tag">Villas</span></div>
+        </div>
+        <div class="pkg-foot"><a href="#contact" class="btn btn-primary btn-block btn-sm">Choose Premium</a></div>
+      </div>
+      <div class="pkg-card">
+        <div class="pkg-head pkg-luxury"><div class="tier">Luxury™</div><div class="rate">₹2,499<small> /sqft</small></div></div>
+        <div class="pkg-body">
+          <p style="color:var(--ink); font-weight:600; font-size:13px;">Live Without Compromise.</p>
+          <li>Signature architectural design</li><li>Imported finishes & designer kitchen</li>
+          <li>Home automation & security</li><li>Concierge-level project management</li>
+          <div class="tag-row"><span class="tag">Villas</span><span class="tag">Farmhouses</span><span class="tag">Luxury Residences</span></div>
+        </div>
+        <div class="pkg-foot"><a href="#contact" class="btn btn-outline-dark btn-block btn-sm">Choose Luxury</a></div>
+      </div>
+    </div>
+
+    <div class="compare-wrap">
+      <h3 style="font-size:20px; margin:56px 0 20px;">Compare packages side by side</h3>
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th class="row-label">Feature</th>
+            <th class="col-basic">Basic™</th>
+            <th class="col-essential">Essential™</th>
+            <th class="col-premium">Premium™</th>
+            <th class="col-luxury">Luxury™</th>
+          </tr>
+        </thead>
+        <tbody id="compare-tbody"></tbody>
+      </table>
+    </div>
+
+    <div class="calc-card">
+      <div class="calc-left">
+        <div class="eyebrow">Instant Estimate</div>
+        <h3 style="font-size:22px; margin-bottom:6px;">Estimate your build cost</h3>
+        <p style="margin-bottom:0;">Pick a package and enter your built-up area for a quick estimate. Final pricing is confirmed after a site visit.</p>
+      </div>
+      <div class="calc-right">
+        <div class="field">
+          <label>Package</label>
+          <select id="calc-package">
+            <option value="1499">Basic™ — ₹1,499/sqft</option>
+            <option value="1799">Essential™ — ₹1,799/sqft</option>
+            <option value="2199" selected>Premium™ — ₹2,199/sqft</option>
+            <option value="2499">Luxury™ — ₹2,499/sqft</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Built-up Area (sqft)</label>
+          <input type="number" id="calc-area" value="1500" min="200" step="50">
+        </div>
+        <div class="calc-output">
+          <div class="calc-lbl">Estimated Cost</div>
+          <div class="calc-val mono" id="calc-result">₹32,98,500</div>
+        </div>
+        <a href="#contact" class="btn btn-primary btn-block btn-sm">Get an Exact Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding:64px 0; background:var(--bg-light);">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="eyebrow" style="justify-content:center">Premium Add-Ons</div>
+      <h2 style="font-size:26px;">Available with any package.</h2>
+    </div>
+    <div class="addon-grid">
+      <div class="addon-item">Solar Power</div>
+      <div class="addon-item">EV Charging</div>
+      <div class="addon-item">Smart Home Automation</div>
+      <div class="addon-item">CCTV & Security</div>
+      <div class="addon-item">Rainwater Harvesting</div>
+      <div class="addon-item">Home Lift</div>
+      <div class="addon-item">Swimming Pool</div>
+      <div class="addon-item">Home Theatre</div>
+      <div class="addon-item">Landscape Design</div>
+      <div class="addon-item">Vastu Planning</div>
+    </div>
+  </div>
+</section>
+
+<section id="budget-studio" style="background:var(--paper); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="eyebrow" style="justify-content:center">Budget Studio™</div>
+      <h2>Or, build it your way.</h2>
+      <p>Start with one base package, then upgrade exactly what matters to you — see live ₹/sqft pricing as you go.</p>
+    </div>
+
+    <div class="config-base">
+      <div>
+        <div class="config-base-lbl">Base Package</div>
+        <div class="config-base-desc">Functional architecture, standard structure, standard electrical & plumbing, basic finishes — everything you need to build safely and soundly.</div>
+      </div>
+      <div class="config-base-rate mono">₹1,499<small>/sqft</small></div>
+    </div>
+
+    <div class="preset-row">
+      <span class="preset-lbl">Quick start:</span>
+      <button type="button" class="preset-btn" data-preset="base">Just the Base</button>
+      <button type="button" class="preset-btn" data-preset="firsttime">First-Time Builder</button>
+      <button type="button" class="preset-btn" data-preset="villa">Popular for Villas</button>
+      <button type="button" class="preset-btn" data-preset="loaded">Fully Loaded</button>
+    </div>
+
+    <div id="config-categories"></div>
+
+    <div class="config-total">
+      <div class="config-total-left">
+        <div class="field" style="margin-bottom:0;">
+          <label>Built-up Area (sqft)</label>
+          <input type="number" id="config-area" value="1500" min="200" step="50">
+        </div>
+        <div class="tier-badge" id="tier-badge">Closest to <strong>Basic™</strong></div>
+      </div>
+      <div class="config-total-right">
+        <div class="calc-lbl" style="color:var(--ink-soft);">Total Estimated Rate</div>
+        <div class="config-total-rate mono" id="config-rate">₹1,499<small>/sqft</small></div>
+        <div class="config-total-cost mono" id="config-cost">₹22,48,500 total</div>
+        <a href="#contact" class="btn btn-primary btn-sm" id="config-quote-btn" style="margin-top:10px;">Get This Quote</a>
+      </div>
+    </div>
+    <p style="text-align:center; font-size:12.5px; margin-top:16px;">Estimates from Budget Studio™ are indicative — final pricing is confirmed after a site visit.</p>
+  </div>
+</section>
+
+
+<section id="ecosystem" style="background:var(--bg-dark); color:#fff;">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="eyebrow" style="justify-content:center">The ConstructONS Ecosystem</div>
+      <h2 style="color:#fff;">20+ services. One platform. Endless possibilities.</h2>
+    </div>
+    <div class="eco-grid">
+      <div class="eco-card"><div class="eco-num">01</div><h4>Homes™</h4><p>Turnkey home construction with premium packages or create your own budget.</p></div>
+      <div class="eco-card eco-highlight"><div class="eco-num">02</div><h4>PayLater™</h4><p>Build today. Pay later with milestone-based payment facility (subject to eligibility).</p></div>
+      <div class="eco-card"><div class="eco-num">03</div><h4>Live™</h4><p>Live tracking of your project. Cameras, updates, timelines, payments & more — all in one place.</p></div>
+      <div class="eco-card"><div class="eco-num">04</div><h4>Lifecycle™</h4><p>Complete journey from advisory to handover and beyond — we are with you for life.</p></div>
+      <div class="eco-card eco-highlight"><div class="eco-num">05</div><h4>Budget Studio™</h4><p>Interactive budget configurator. Choose, customize & see live ₹/sqft pricing instantly.</p></div>
+      <div class="eco-card"><div class="eco-num">06</div><h4>GroupBuild™</h4><p>Build together. Save together. Bulk procurement, shared resources & better value.</p></div>
+      <div class="eco-card"><div class="eco-num">07</div><h4>Marketplace™</h4><p>Everything for your home: materials, labour, interiors, furniture, appliances & more.</p></div>
+      <div class="eco-card"><div class="eco-num">08</div><h4>BuildPass™</h4><p>Your digital identity. All projects, docs, warranties, quotes & membership in one secure place.</p></div>
+      <div class="eco-card"><div class="eco-num">09</div><h4>PMC™</h4><p>Professional project management for quality, cost control, schedule & smooth execution.</p></div>
+      <div class="eco-card"><div class="eco-num">10</div><h4>Advisory™</h4><p>Expert guidance before you build. Land evaluation, budget planning & feasibility.</p></div>
+      <div class="eco-card"><div class="eco-num">11</div><h4>Design™</h4><p>Architecture, structural design, 3D views & working drawings that bring your dream to life.</p></div>
+      <div class="eco-card"><div class="eco-num">12</div><h4>Approvals™</h4><p>End-to-end handling of documentation & government approvals.</p></div>
+      <div class="eco-card"><div class="eco-num">13</div><h4>Interiors™</h4><p>Complete interior solutions tailored to your style & budget.</p></div>
+      <div class="eco-card"><div class="eco-num">14</div><h4>Furniture™</h4><p>Ready-to-install furniture packages for every room in your home.</p></div>
+      <div class="eco-card"><div class="eco-num">15</div><h4>Smart™</h4><p>Smart home technology for safety, comfort & convenience.</p></div>
+      <div class="eco-card"><div class="eco-num">16</div><h4>Care™</h4><p>After-sales support, annual maintenance, warranty & emergency help.</p></div>
+      <div class="eco-card"><div class="eco-num">17</div><h4>Upgrade™</h4><p>Upgrade your home with the latest materials, features & designs.</p></div>
+      <div class="eco-card"><div class="eco-num">18</div><h4>Renovate™</h4><p>Complete renovation & remodeling services for your existing home.</p></div>
+      <div class="eco-card"><div class="eco-num">19</div><h4>Commercial™</h4><p>Dedicated solutions for offices, retail, warehouses & commercial buildings.</p></div>
+      <div class="eco-card"><div class="eco-num">20</div><h4>Studio™</h4><p>Experience centers to explore materials, finishes, kitchens, bathrooms in real life.</p></div>
+    </div>
+
+    <h3 style="text-align:center; font-size:20px; margin:56px 0 6px;">The ConstructONS Platform</h3>
+    <p style="text-align:center; margin-bottom:32px;">Built on technology. Backed by expertise. Driven by trust.</p>
+    <div class="layer-grid">
+      <div class="layer-card layer-1">
+        <div class="eyebrow">Layer 1 — Customer Products</div>
+        <p style="color:rgba(255,255,255,.6); font-size:12.5px; margin-bottom:14px;">What customers see & use</p>
+        <ul class="layer-list"><li>Homes™</li><li>PayLater™</li><li>Budget Studio™</li><li>Live™</li><li>GroupBuild™</li></ul>
+      </div>
+      <div class="layer-card layer-2">
+        <div class="eyebrow">Layer 2 — Delivery Services</div>
+        <p style="color:rgba(255,255,255,.6); font-size:12.5px; margin-bottom:14px;">What we execute for you</p>
+        <ul class="layer-list"><li>Advisory™</li><li>Design™</li><li>Approvals™</li><li>PMC™</li><li>Construction™</li><li>Interiors™</li><li>Furniture™</li></ul>
+      </div>
+      <div class="layer-card layer-3">
+        <div class="eyebrow">Layer 3 — Lifetime Relationship</div>
+        <p style="color:rgba(255,255,255,.6); font-size:12.5px; margin-bottom:14px;">Stay with you, always</p>
+        <ul class="layer-list"><li>Care™</li><li>Upgrade™</li><li>Renovate™</li><li>Smart™</li><li>BuildPass™</li></ul>
+      </div>
+    </div>
+
+    <div class="pillar-strip">
+      <div class="pillar"><strong>Technology</strong><span>AI, Automation, Data Security</span></div>
+      <div class="pillar"><strong>Expert Network</strong><span>Architects, Engineers, Vendors, Contractors</span></div>
+      <div class="pillar"><strong>Quality Assurance</strong><span>Standardized Process, Site Inspections</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <div class="sec-head center">
+      <div class="eyebrow" style="justify-content:center">Why ConstructONS</div>
+      <h2>Built for everyone in your project.</h2>
+    </div>
+    <div class="pipeline" style="grid-template-columns:repeat(4,1fr);">
+      <div class="pipe-card"><h4>Homeowners</h4><p>Build your dream home with real-time confidence, not guesswork.</p></div>
+      <div class="pipe-card"><h4>Builders & Developers</h4><p>Manage multiple projects seamlessly on one dashboard.</p></div>
+      <div class="pipe-card"><h4>Architects & Designers</h4><p>Collaborate and deliver better, faster.</p></div>
+      <div class="pipe-card"><h4>Contractors & Vendors</h4><p>Work efficiently and grow your business with us.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" style="background:var(--bg-dark); color:#fff;">
+  <div class="wrap" style="max-width:640px; text-align:center;">
+    <div class="eyebrow" style="justify-content:center">Let's Build Your Dream, Together</div>
+    <h2 style="color:#fff;">Get a free consultation.</h2>
+    <p style="color:rgba(255,255,255,.6); margin-bottom:32px;">Tell us about your plot and we'll get back within 24 hours with a package recommendation.</p>
+    <form id="lead-form" style="text-align:left; display:grid; gap:14px;">
+      <div class="field"><label style="color:#fff;">Full Name</label><input type="text" required placeholder="Your name"></div>
+      <div class="field"><label style="color:#fff;">Phone Number</label><input type="tel" required placeholder="+91 XXXXX XXXXX"></div>
+      <div class="field"><label style="color:#fff;">City</label><input type="text" required placeholder="e.g. Coimbatore"></div>
+      <div class="field"><label style="color:#fff;">Plot Area (sqft)</label><input type="number" placeholder="e.g. 2400"></div>
+      <div class="field"><label style="color:#fff;">Project Notes</label><textarea id="lead-notes" rows="3" placeholder="Any details you'd like to share" style="width:100%; padding:12px 14px; border:1px solid var(--line); border-radius:8px; font-size:14px; font-family:'Inter',sans-serif; resize:vertical;"></textarea></div>
+      <button type="submit" class="btn btn-primary btn-block">Request Callback</button>
+      <p id="lead-msg" style="text-align:center; font-size:13px;"></p>
+    </form>
+  </div>
+</section>
+
+<div class="modal-overlay" id="stage-modal-overlay">
+  <div class="modal-panel">
+    <div class="modal-head">
+      <div><h3 id="stage-modal-title">Stage name</h3></div>
+      <button class="modal-close" id="stage-modal-close" aria-label="Close">✕</button>
+    </div>
+    <p class="modal-sub" id="stage-modal-sub">What this stage covers</p>
+    <div id="stage-modal-subtasks"></div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <div class="brand" style="margin-bottom:14px;">
+        <div class="brand-mark">C</div>
+        <div class="brand-text">Construct<span>ONS</span></div>
+      </div>
+      <p style="max-width:280px; font-size:13px;">Build Better. Build Smarter. Build with ConstructONS.</p>
+    </div>
+    <div style="display:flex; gap:60px;">
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <strong style="color:#fff; font-size:13px;">Company</strong>
+        <a href="#lifecycle">Lifecycle</a><a href="#packages">Packages</a>
+      <a href="#budget-studio">Budget Studio™</a><a href="#why">Why Us</a>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <strong style="color:#fff; font-size:13px;">Contact</strong>
+        <a href="mailto:hello@constructonshomes.com">hello@constructonshomes.com</a>
+        <a href="tel:+911234567890">+91 12345 67890</a>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <strong style="color:#fff; font-size:13px;">Client Access</strong>
+        <a href="login.html">Client Login</a>
+      </div>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">
+    <span>© 2026 ConstructONS Homes. All rights reserved.</span>
+    <span>Made in India 🇮🇳</span>
+  </div>
+</footer>
+
+<script src="config.js"></script>
+<script>
+const STAGE_DETAILS = {
+  "Advisory™": ["Feasibility Study", "Project Consultation", "Land Evaluation", "Roadmap & Strategy"],
+  "Design™": ["Architectural Design", "Structural Design", "Interior Concepts", "3D Visualization"],
+  "Vastu™": ["Site Analysis", "Plan Review", "Room Positioning", "Energy Alignment"],
+  "Budget™": ["Cost Estimation", "BOQ & Quantity Takeoff", "Budget Tracking", "Payment Planning"],
+  "Approvals™": ["Building Approvals", "Statutory Compliance", "Documentation", "Approval Tracking"],
+  "Construction™": ["Construction Execution", "Material Management", "Labour Management", "Stage Completion"],
+  "Interiors™": ["Interior Design", "Material & Finish Selection", "Execution", "Final Styling"],
+  "Furniture™": ["Furniture Selection", "Procurement", "Delivery", "Installation"],
+  "Smart Home™": ["Device Selection", "Wiring & Installation", "System Configuration", "Testing & Handover"],
+  "Handover™": ["Final Inspection", "Snag Closure", "Warranty Handover", "Project Completion"],
+  "Maintenance™": ["Scheduled Checkups", "Repairs & Servicing", "Emergency Support", "Annual Review"],
+  "Upgrade & Renovation™": ["Consultation", "Design Update", "Execution", "Final Handover"],
+};
+
+function openStageModal(stage){
+  document.getElementById('stage-modal-title').textContent = stage;
+  document.getElementById('stage-modal-sub').textContent = "What's included in this stage";
+  const tasks = STAGE_DETAILS[stage] || [];
+  document.getElementById('stage-modal-subtasks').innerHTML = tasks.map(t => `
+    <div class="subtask"><div class="st-icon" style="background:var(--orange-dim); color:var(--orange);">✓</div><div class="st-name">${t}</div></div>
+  `).join('');
+  document.getElementById('stage-modal-overlay').classList.add('open');
+}
+function closeStageModal(){ document.getElementById('stage-modal-overlay').classList.remove('open'); }
+
+document.querySelectorAll('.pipe-card[data-stage]').forEach(card => {
+  card.addEventListener('click', () => openStageModal(card.dataset.stage));
+  card.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openStageModal(card.dataset.stage); } });
+});
+document.getElementById('stage-modal-close').addEventListener('click', closeStageModal);
+document.getElementById('stage-modal-overlay').addEventListener('click', (e) => { if (e.target.id === 'stage-modal-overlay') closeStageModal(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeStageModal(); });
+
+const COMPARE_ROWS = [
+  ["Architecture", "✓", "✓", "✓", "✓"],
+  ["Structural Design", "✓", "✓", "✓", "✓"],
+  ["Standard MEP", "✓", "✓", "✓", "✓"],
+  ["Designer Elevation", "—", "✓", "✓", "✓"],
+  ["Modular Kitchen", "Optional", "Provision", "Included", "Premium Included"],
+  ["Wardrobes", "—", "Optional", "Included", "Premium Included"],
+  ["False Ceiling", "—", "Selected Areas", "Included", "Designer Included"],
+  ["Smart Home Ready", "—", "—", "✓", "✓"],
+  ["Home Automation", "—", "—", "Optional", "Included"],
+  ["Landscaping", "—", "Optional", "Concept", "Premium Included"],
+];
+document.getElementById('compare-tbody').innerHTML = COMPARE_ROWS.map(row => `
+  <tr>
+    <td class="row-label">${row[0]}</td>
+    <td class="col-basic">${row[1]}</td>
+    <td class="col-essential">${row[2]}</td>
+    <td class="col-premium">${row[3]}</td>
+    <td class="col-luxury">${row[4]}</td>
+  </tr>`).join('');
+
+function updateCalc(){
+  const rate = Number(document.getElementById('calc-package').value);
+  const area = Number(document.getElementById('calc-area').value) || 0;
+  const total = rate * area;
+  document.getElementById('calc-result').textContent = '₹' + total.toLocaleString('en-IN');
+}
+document.getElementById('calc-package').addEventListener('change', updateCalc);
+document.getElementById('calc-area').addEventListener('input', updateCalc);
+updateCalc();
+
+const BASE_RATE = 1499;
+const CONFIG_CATEGORIES = [
+  { key: "structure", name: "Structure", desc: "RCC grade & reinforcement", levels: [
+    { label: "Standard", delta: 0 }, { label: "Enhanced", delta: 80 } ] },
+  { key: "flooring", name: "Flooring", desc: "Tile grade throughout", levels: [
+    { label: "Standard Vitrified", delta: 0 }, { label: "Premium Vitrified", delta: 90 }, { label: "Marble", delta: 280 } ] },
+  { key: "wallfinish", name: "Wall Finishes & Paint", desc: "Putty, primer & paint grade", levels: [
+    { label: "Standard", delta: 0 }, { label: "Enhanced", delta: 70 }, { label: "Premium", delta: 160 } ] },
+  { key: "windows", name: "Windows & Doors", desc: "Frame material & glass", levels: [
+    { label: "Standard UPVC", delta: 0 }, { label: "Premium UPVC", delta: 60 }, { label: "Aluminium / Wood", delta: 180 } ] },
+  { key: "ceiling", name: "Ceiling & Lighting", desc: "False ceiling & fixtures", levels: [
+    { label: "None", delta: 0 }, { label: "Selected Areas", delta: 45 }, { label: "Full + Designer", delta: 130 } ] },
+  { key: "kitchen", name: "Kitchen", desc: "Modular kitchen grade", levels: [
+    { label: "Basic", delta: 0 }, { label: "Provision", delta: 50 }, { label: "Included", delta: 180 }, { label: "Premium", delta: 320 } ] },
+  { key: "electrical", name: "Electrical", desc: "Wiring, switches & automation", levels: [
+    { label: "Standard", delta: 0 }, { label: "Improved", delta: 40 }, { label: "Smart-Ready", delta: 90 }, { label: "Automation", delta: 180 } ] },
+  { key: "plumbing", name: "Plumbing", desc: "Pipes & water supply lines", levels: [
+    { label: "Standard", delta: 0 }, { label: "Better", delta: 25 }, { label: "Premium", delta: 55 }, { label: "Luxury", delta: 95 } ] },
+  { key: "bathfittings", name: "Bathroom Fittings", desc: "Sanitaryware & CP fittings", levels: [
+    { label: "Standard", delta: 0 }, { label: "Premium", delta: 55 }, { label: "Imported", delta: 130 } ] },
+  { key: "exterior", name: "Exterior & Elevation", desc: "Facade design & exterior finish", levels: [
+    { label: "Basic", delta: 0 }, { label: "Enhanced", delta: 60 }, { label: "Designer", delta: 140 }, { label: "Signature", delta: 250 } ] },
+  { key: "security", name: "Security & Automation", desc: "CCTV, locks & home automation", levels: [
+    { label: "None", delta: 0 }, { label: "CCTV + Smart Locks", delta: 45 }, { label: "Full Automation", delta: 120 } ] },
+  { key: "outdoor", name: "Outdoor & Landscaping", desc: "Garden & exterior spaces", levels: [
+    { label: "None", delta: 0 }, { label: "Basic", delta: 35 }, { label: "Premium", delta: 110 } ] },
+];
+const configState = {};
+CONFIG_CATEGORIES.forEach(c => configState[c.key] = 0);
+
+const FIXED_TIERS = [
+  { name: "Basic™", rate: 1499, color: "var(--basic)" },
+  { name: "Essential™", rate: 1799, color: "var(--essential)" },
+  { name: "Premium™", rate: 2199, color: "var(--premium)" },
+  { name: "Luxury™", rate: 2499, color: "var(--luxury)" },
+];
+
+const PRESETS = {
+  base:      CONFIG_CATEGORIES.map(() => 0),
+  firsttime: { structure:0, flooring:0, wallfinish:1, windows:0, ceiling:0, kitchen:1, electrical:0, plumbing:0, bathfittings:0, exterior:1, security:0, outdoor:0 },
+  villa:     { structure:1, flooring:1, wallfinish:1, windows:1, ceiling:1, kitchen:2, electrical:1, plumbing:1, bathfittings:1, exterior:2, security:1, outdoor:1 },
+  loaded:    CONFIG_CATEGORIES.reduce((o,c) => { o[c.key] = c.levels.length - 1; return o; }, {}),
+};
+
+function applyPreset(name){
+  const preset = PRESETS[name];
+  CONFIG_CATEGORIES.forEach((cat, i) => {
+    configState[cat.key] = Array.isArray(preset) ? preset[i] : preset[cat.key];
+  });
+  renderConfigurator();
+  updateConfigTotal();
+}
+document.querySelectorAll('.preset-btn').forEach(btn => {
+  btn.addEventListener('click', () => applyPreset(btn.dataset.preset));
+});
+
+function renderConfigurator(){
+  const el = document.getElementById('config-categories');
+  el.innerHTML = CONFIG_CATEGORIES.map(cat => `
+    <div class="config-cat">
+      <div class="config-cat-head">
+        <div>
+          <div class="config-cat-name">${cat.name}</div>
+          <div class="config-cat-desc">${cat.desc}</div>
+        </div>
+      </div>
+      <div class="chip-row" data-cat="${cat.key}">
+        ${cat.levels.map((lvl, i) => `
+          <button type="button" class="chip ${i === configState[cat.key] ? 'active' : ''}" data-idx="${i}">
+            ${lvl.label}${lvl.delta > 0 ? `<span class="delta">+₹${lvl.delta}</span>` : ''}
+          </button>`).join('')}
+      </div>
+    </div>`).join('');
+
+  el.querySelectorAll('.chip-row').forEach(row => {
+    const catKey = row.dataset.cat;
+    row.querySelectorAll('.chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        configState[catKey] = Number(chip.dataset.idx);
+        renderConfigurator();
+        updateConfigTotal();
+      });
+    });
+  });
+}
+
+function currentConfigSummary(rate, area){
+  const lines = CONFIG_CATEGORIES.map(cat => `${cat.name}: ${cat.levels[configState[cat.key]].label}`);
+  return `Configured build — ₹${rate.toLocaleString('en-IN')}/sqft × ${area} sqft = ₹${(rate*area).toLocaleString('en-IN')}\n` + lines.join(', ');
+}
+
+function updateConfigTotal(){
+  let rate = BASE_RATE;
+  CONFIG_CATEGORIES.forEach(cat => { rate += cat.levels[configState[cat.key]].delta; });
+  const area = Number(document.getElementById('config-area').value) || 0;
+  document.getElementById('config-rate').innerHTML = `₹${rate.toLocaleString('en-IN')}<small>/sqft</small>`;
+  document.getElementById('config-cost').textContent = `₹${(rate * area).toLocaleString('en-IN')} total`;
+
+  let closest = FIXED_TIERS[0];
+  FIXED_TIERS.forEach(t => { if (Math.abs(t.rate - rate) < Math.abs(closest.rate - rate)) closest = t; });
+  const badge = document.getElementById('tier-badge');
+  badge.innerHTML = `Closest to <strong style="color:${closest.color}">${closest.name}</strong>`;
+
+  document.getElementById('config-quote-btn').dataset.summary = currentConfigSummary(rate, area);
+}
+document.getElementById('config-area').addEventListener('input', updateConfigTotal);
+document.getElementById('config-quote-btn').addEventListener('click', () => {
+  const notes = document.getElementById('lead-notes');
+  notes.value = document.getElementById('config-quote-btn').dataset.summary || '';
+});
+renderConfigurator();
+updateConfigTotal();
+
+document.getElementById('lead-form').addEventListener('submit', async function(e){
+  e.preventDefault();
+  const inputs = this.querySelectorAll('input');
+  const [name, phone, city, plot] = inputs;
+  const notes = document.getElementById('lead-notes');
+  const msg = document.getElementById('lead-msg');
+
+  if (SUPABASE_CONFIGURED) {
+    const { error } = await supabaseClient.from('leads').insert({
+      full_name: name.value, phone: phone.value, city: city.value,
+      plot_area: plot.value ? Number(plot.value) : null,
+      notes: notes.value || null
+    });
+    if (error) {
+      msg.textContent = "Something went wrong — please call us directly.";
+      msg.style.color = '#FF8A80';
+      return;
+    }
+  }
+  msg.textContent = "Thanks — we'll call you within 24 hours.";
+  msg.style.color = '#7FD99A';
+  this.reset();
+});
+</script>
+</body>
+</html>
